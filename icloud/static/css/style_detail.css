@@ -1,0 +1,23 @@
+.image_detail
+{
+    max-height: 65vh;
+    padding: 4vh 0;
+}
+.image_box
+{
+    display: flex;
+    align-items: flex-start;
+
+    color: black;
+
+    background: linear-gradient(90deg, rgb(1, 5, 21) 0%, rgb(255, 255, 255) 25%, rgb(255, 255, 255) 100%);
+    border: 3px solid white;
+    border-radius: 0 1vw 1vw 0;
+
+    margin: 10vh;
+    padding: 3vh;
+}
+.image_box p
+{
+    padding: 0 3vw;
+}

@@ -1,0 +1,35 @@
+{% extends 'root.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        div
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid white;
+            height: 500px;
+            width: 500px;
+        }
+        p
+        {
+            padding: 0;
+            font-size: 100px;
+            color: white;
+        }
+    </style>
+
+    <div>
+        <label for="select_id">
+
+            <select name="select" id="select_id">
+                {% for opt in tests %}
+                    <option value="{{ opt.id }}" id="" class="click_me option_{{ opt.id }}">{{ opt.title }}</option>
+                {% endfor %}
+            </select>
+            <p style="color: white;" id="title_1">first</p>
+        </label>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'root.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        form
+        {
+            color: white;
+            padding: 6vh 6vw;
+        }
+    </style>
+    <form action="." method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="OK">
+    </form>
+{% endblock %}

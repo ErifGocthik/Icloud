@@ -1,0 +1,464 @@
+@font-face {
+    font-family: 'Cherry Boom';
+    src: url('/static/fonts/CherryBomb-Regular.ttf') format('truetype');
+}
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: "Cherry Boom", serif;
+
+    scroll-behavior: smooth;
+}
+.main_background
+{
+    background-image: url("/static/backgrounds/nigth_bg.png");
+    background-size: 100%;
+    width: 100vw;
+    height: 100vh;
+}
+.z--99
+{
+    z-index: -99;
+}
+.pos-fix
+{
+    position: fixed;
+}
+.z--1
+{
+    z-index: -1;
+}
+.z-0
+{
+    z-index: 0;
+}
+.z-1
+{
+    z-index: 1;
+}
+.z-2
+{
+    z-index: 2;
+}
+div
+{
+    display: flex;
+    align-items: center;
+}
+body
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    overflow-x: hidden;
+}
+header
+{
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+    justify-content: center;
+
+    width: 3%;
+    height: 90vh;
+
+    margin: 5vh 0 0 0;
+    padding: 0 0.5vw;
+
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 0 3vh 3vh 0;
+    background: linear-gradient(90deg, #000f1f 0%, rgb(0, 0, 0, 0%) 100%);
+
+    transition: 160ms;
+}
+header a
+{
+    width: 100%;
+    text-align: center;
+}
+header img
+{
+    width: 100%;
+
+    filter: drop-shadow(0 0 3px #d0d0d0);
+}
+.list
+{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    padding: 2vh 0 0 0;
+
+    width: 100vw;
+    height: auto;
+}
+.list_menu
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+
+    width: 85vw;
+    height: auto;
+
+    border-radius: 3vh;
+    border: 3px solid rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgb(2, 5, 21) 0%, rgb(2, 5, 21) 100%);
+
+    margin: 0 0 0 7vw;
+
+    transition: 500ms;
+}
+.list_menu_box
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    width: 16vw;
+    height: 45vh;
+
+    padding: 1vh;
+    margin: 3vh 2.05vw;
+
+    background: linear-gradient(180deg, rgb(140, 210, 238) 0%, rgb(203, 243, 255) 50%, rgb(255, 203, 255) 100%) repeat-y;
+    border: 1px solid white;
+    border-radius: 1vh;
+
+    filter: drop-shadow(0 0 1vw rgba(255, 255, 255, 0.37));
+    transition: 130ms;
+
+}
+.list_menu_box:hover
+{
+    transform: scale(1.02);
+    transition: 160ms;
+}
+.list_menu a
+{
+    text-decoration: none;
+}
+.list_menu_box p
+{
+    color: white;
+    width: 100%;
+    filter: drop-shadow(0 0 1vw #404985);
+}
+.list_menu_box img
+{
+    max-width: 100%;
+    max-height: 30vh;
+}
+.list_menu_box_image
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 67%;
+
+    border-radius: 1vh;
+    background-color: white;
+
+    box-shadow: 0 0 0.5vw #c4c4c4 inset;
+}
+.list_choose_menu
+{
+    position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+
+    height: 99.3vh;
+    width: 3vw;
+
+    margin: 0 0 0 100vw;
+
+    border-radius: 5vh 0 0 5vh;
+    border: 3px solid rgba(255, 255, 255, 0);
+
+    background-color: rgba(0, 15, 31, 0.05);
+    text-decoration: none;
+
+    transition: 300ms .1s;
+}
+.list_choose_menu img
+{
+    cursor: pointer;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.53));
+
+    max-width: 100%;
+    transition: 160ms;
+}
+.list_choose_menu .delete_btn:hover
+{
+    filter: drop-shadow(0 0 5px rgb(255, 255, 255));
+    transition: 360ms;
+}
+.list_choose_menu .delete_btn_a:hover
+{
+    filter: drop-shadow(0 0 5px rgb(255, 255, 255));
+    transition: 360ms;
+}
+::-webkit-scrollbar              { /* 1 - скроллбар */ width: 0}
+/*::-webkit-scrollbar-button       { !* 2 - кнопка *! }*/
+/*::-webkit-scrollbar-track        { !* 3 - трек *! }*/
+/*::-webkit-scrollbar-track-piece  { !* 4 - видимая часть трека *! }*/
+/*::-webkit-scrollbar-thumb        { !* 5 - ползунок *! }*/
+/*::-webkit-scrollbar-corner       { !* 6 - уголок *! }*/
+/*::-webkit-resizer                { !* 7 - изменение размеров *! }*/
+.archive_list
+{
+    /*border: 1px solid white;*/
+
+    /*width: 80%;*/
+    /*min-height: 10vh;*/
+
+    /*margin: 5vh 0 0 10%;*/
+
+    /*color: white;*/
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    width: 86vw;
+    min-height: 10vh;
+
+    border-radius: 3vh;
+    border: 3px solid rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgb(2, 5, 21) 0%, rgb(2, 5, 21) 100%);
+
+    margin: 5vh 0 0 7.5vw;
+
+    color: white;
+}
+.archive_list a
+{
+    text-decoration: none;
+    color: white;
+
+    overflow: hidden;
+}
+.archive_list .archive
+{
+    border: 1px solid white;
+    min-width: 18vw;
+    max-width: 18vw;
+    height: 250px;
+
+    margin: 3vh 1.5vw 3vh 1.5vw;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    transition: 200ms;
+}
+.archive_list .archive p
+{
+    width: 100%;
+
+    text-align: center;
+}
+.archive_list .archive .box_archive_images
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    min-width: 100%;
+    max-width: 100%;
+
+    padding: 0 0 0 11.9vw;
+
+    transition: 200ms;
+}
+.archive_list .archive .box_archive_images .div_img
+{
+    position: relative;
+
+    min-width: 10vw;
+    min-height: 20vh;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 10px;
+
+    filter: drop-shadow(0 0 10px black);
+
+    margin: 0 -4vw;
+
+    transition: 200ms;
+}
+.archive_list .archive:hover
+{
+    transform: scale(1.02);
+    transition: 200ms;
+}
+.archive_list .archive:hover .box_archive_images .div_img
+{
+    transition: 200ms;
+    margin: 0 -3.5vw;
+}
+.archive_list .archive:hover .box_archive_images
+{
+    transition: 200ms;
+    padding: 0 0 0 9vw;
+}
+.archive_list .archive_icon
+{
+    position: relative;
+
+    left: -2px;
+
+    border: 1px solid white;
+    border-radius: 50%;
+
+    background-position: center;
+    background-size: 200%;
+
+    filter: blur(0.05vh);
+
+    width: 50px;
+    height: 50px;
+
+    z-index: 99;
+
+    transition: 200ms;
+}
+.change_window
+{
+    position: fixed;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin: 5vh 5vw ;
+
+    width: 90vw;
+    height: 90vh;
+
+    background: #010b18;
+
+    border-radius: 20px;
+    border: 3px solid white;
+
+    z-index: -98;
+    visibility: hidden;
+
+    box-shadow: 0 0 50px #191921 inset;
+
+    overflow-y: scroll;
+}
+.close_btn
+{
+    position: fixed;
+    left: 93.5vw;
+    top: 2vh;
+
+    filter: hue-rotate(180deg);
+
+    z-index: -97;
+    visibility: hidden;
+
+    width: 50px;
+    height: 50px;
+
+    transition: 160ms;
+}
+.close_btn:hover
+{
+    transform: scale(1.1);
+    transition: 160ms;
+}
+.close_btn:active
+{
+    transform: scale(0.9);
+    transition: 80ms;
+}
+.change_window .archive_choose
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    width: 100%;
+    height: auto;
+
+    margin: 1%;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    border-radius: 10px;
+    border: 1px solid white;
+
+    color: white;
+
+    cursor: pointer;
+
+}
+.change_window .archive_choose .frontground
+{
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+
+    background: rgba(255, 255, 255, 0);
+
+    border-radius: 10px;
+
+    width: 88vw;
+    height: 38.5vh;
+
+    filter: blur(5px);
+}
+.change_window .archive_choose p
+{
+    width: 90%;
+
+    padding: 13px 5px 5px 20px;
+}
+.change_window .archive_choose .archive_icon_choose
+{
+    position: relative;
+
+    min-width: 50px;
+    min-height: 50px;
+
+    margin: 5px;
+
+    background-position: center;
+    background-size: cover;
+
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.change_window .archive_choose .archive_image_choose
+{
+    height: 200px;
+    width: 200px;
+
+    margin: 11.5px;
+
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 10px;
+    border: 1px solid white;
+    box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.48) inset;
+}

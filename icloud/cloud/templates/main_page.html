@@ -1,0 +1,41 @@
+{% extends 'root.html' %}
+{% load static %}
+{% block content %}
+    <div class="z-1 list">
+        <div class="z-1 list_menu">
+            {% for image in clouds %}
+                <a href="{% url 'main:img_detail' image.id %}">
+                    <div class="z-1 list_menu_box image_block img_{{ image.id }}_id">
+                        <div class="list_menu_box_image">
+                            <img src="{{ image.image.url }}">
+                        </div>
+                        <p>{{ image.name }}</p>
+                        <p>{{ image.description }}</p>
+                        <p>{{ image.date }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="list_choose_menu z-2">
+        <img src="{% static 'icons/Delete_btn.png' %}" alt="" class="delete_btn">
+        <img src="{% static 'icons/Change_archive.png' %}" alt="" class="change_btn">
+    </div>
+    <img src="/static/icons/Delete_btn.png" alt="" class="close_btn">
+    <div class="change_window">
+        {% for archive in archives %}
+            <div class="archive_choose arc_{{ archive.id }}_id" id="arc{{ archive.id }}">
+                <div style="background-image: url('/media/{{ archive.icon }}')" class="archive_icon_choose"></div>
+                <p>{{ archive.title }}</p>
+                {% if archive.images.count == 0 %}
+                    <div style="background-image: url('/static/default_images/Default_empty.png')" class="archive_image_choose"></div>
+                {% else %}
+                {% for object in archive.images.all|slice:'0:6' %}
+                    <div style="background-image: url('/media/{{ object }}')" class="archive_image_choose" id="image_change"></div>
+                {% endfor %}
+                {% endif %}
+                <div class="arc_{{ archive.id }}_id frontground"></div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

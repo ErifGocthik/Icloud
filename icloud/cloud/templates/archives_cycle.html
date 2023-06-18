@@ -1,0 +1,22 @@
+{% block content %}
+
+<div class="archive_list">
+    {% for archive in archive_cycle %}
+        <a href="{% url 'main:archive_detail' archive.id %}" class="archive">
+                    <p>{{ archive.title }}</p>
+                        <div class="box_archive_images">
+                            {% if archive.images.count == 0 %}
+                                <div class="div_img"></div>
+                            {% else %}
+                            {% for image in archive.images.all|slice:"0:3" %}
+                                <div class="div_img" style="background-image: url('/media/{{ image }}')"></div>
+            {#                    <img src="/media/{{ image }}" alt="{{ image }}" style="width: 200px;">#}
+                            {% endfor %}
+                        {% endif %}
+                        </div>
+
+            <p>{{ archive.images.count }}</p>
+        </a>
+    {% endfor %}
+</div>
+{% endblock %}

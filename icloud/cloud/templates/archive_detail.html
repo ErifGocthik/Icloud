@@ -1,0 +1,24 @@
+{% extends 'root.html' %}
+{% load static   %}
+{% block content %}
+    <div class="archive_list">
+    <h1 style="width: 100%; text-align: center">{{ archive_det.title }}</h1>
+    {% for image in archive_det.images.all %}
+        <a href="{% url 'main:img_detail' image.id %}">
+        <div class="z-1 list_menu_box image_block archive_images img_{{ image.id }}_id">
+            <div class="list_menu_box_image">
+                <img src="/media/{{ image }}" alt="">
+            </div>
+                <p>{{ image.name }}</p>
+                <p>{{ image.description }}</p>
+                <p>{{ image.date }}</p>
+        </div>
+        </a>
+    {% endfor %}
+
+    </div>
+    <div class="list_choose_menu z-2">
+        <img src="{% static 'icons/Delete_btn.png' %}" alt="" class="delete_btn_a">
+        <img src="{% static 'icons/Change_archive.png' %}" alt="" class="change_btn_a">
+    </div>
+{% endblock %}

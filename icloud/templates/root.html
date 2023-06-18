@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style_detail.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style_register.css' %}">
+    <link rel="stylesheet" href="{% static '/css/modal_window.css' %}">
+    <script src="{% static '/js/jquery.js' %}" type="text/javascript"></script>
+    <script src="{% static '/js/grapadd.js' %}" type="text/javascript"></script>
+    <script src="{% static '/js/event.js' %}" type="text/javascript"></script>
+    <script src="{% static '/js/modal_window.js' %}" type="text/javascript"></script>
+    <script src="{% static '/js/event_archive.js' %}" type="text/javascript"></script>
+    <title>ICloud</title>
+</head>
+<body oncontextmenu="return false;">
+    <div class="main_background z--99 pos-fix"></div>
+    <header class="z-2">
+        <a href="{% url 'main:cloud_list' %}"><img src="{% static '/icons/Cloud_ico.png' %}" alt=""></a>
+        <a href="{% url 'main:archives' %}"><img src="{% static '/icons/archive_ico.png' %}" alt=""></a>
+        <a href="#"><img src="{% static '/icons/profile_ico.png' %}" alt=""></a>
+        <a href="#"><img src="{% static '/icons/other_png.png' %}" alt=""></a>
+        <a href="#"><img src="{% static '/icons/Create_new_archive.png' %}" alt="" class="create_new_archive_btn"></a>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

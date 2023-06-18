@@ -1,0 +1,11 @@
+{% extends 'root.html'%}
+{% block content %}
+    <div class="image">
+        <div class="image_box">
+        <img src="{{ images.image.url }}" class="z-1 image_detail">
+        <p>{{ images.name }}</p><br>
+        <p>{{ images.date }}</p><br>
+        <p>{{ images.description }}</p>
+        </div>
+    </div>
+{% endblock %}
